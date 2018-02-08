@@ -16,7 +16,8 @@ try:
         print('Request received:')
         print(recvSocket.recv(2048))
         print('Answering back...')
-        recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
+        recvSocket.send(bytes(
+                        "HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h2>Hola. " +
                         "<a href=" + aleatorio + ">Dame otra</a>" +
                         "</h2></body></html>" +
