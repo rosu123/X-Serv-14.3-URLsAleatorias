@@ -12,12 +12,12 @@ try:
     while True:
         print('Waiting for connections')
         (recvSocket, address) = mySocket.accept()
-        aleatorio=str(random.randint(0, 999999999))
+        aleatorio = str(random.randint(0, 999999999))
         print('Request received:')
         print(recvSocket.recv(2048))
         print('Answering back...')
         recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
-                        "<html><body><h2>Hola. "  +
+                        "<html><body><h2>Hola. " +
                         "<a href=" + aleatorio + ">Dame otra</a>" +
                         "</h2></body></html>" +
                         "\r\n", "utf-8"))
